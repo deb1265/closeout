@@ -1,0 +1,110 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+#custIDForm {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#custIDForm input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#custIDForm button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #008cba;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#custIDForm button[type="submit"]:hover {
+    background-color: #005f73;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.loading {
+	display: none; /* Updated to 'none' to be hidden initially */
+    text-align: center; /* Center the loader horizontally */
+    margin-top: 20px; /* Add some space above the loader */
+    font-size: 50px; /* Increase the size of the dots */
+}
+
+/* Create the animation for the ellipsis effect */
+@keyframes ellipsis {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+    100% { content: ''; }
+}
+
+/* Use a pseudo-element for the animation */
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    animation: ellipsis 1.5s infinite;
+}
+
+.output-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* In case of wide content */
+}
+
+.output-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.output-container table,
+.output-container th,
+.output-container td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.output-container th {
+    background-color: #008cba;
+    color: white;
+}
+
+.output-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.output-container tr:hover {
+    background-color: #ddd;
+}
+/* Existing styles... */
+
+#timerOutput {
+    text-align: center; /* Center the text horizontally */
+    margin-top: 10px; /* Add space above the timer */
+    font-size: 16px; /* Set the font size for the timer text */
+    color: #333; /* Set the color of the timer text */
+    font-weight: bold; /* Make the timer text bold */
+}
